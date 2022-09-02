@@ -9,3 +9,4 @@ Grupo:
 - Tiago Sabor
 - Gabriel Bottasin
 - Anderson da Silva
+- Israel Moreira
