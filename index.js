@@ -26,8 +26,6 @@ function doCalculateImc(height, weight) {
 }
 
 window.onload = function (evt) {
-  console.log(evt)
-
   var btn = document.querySelector("#main-action")
   btn.addEventListener("click", buildCalculateImc())
 }
