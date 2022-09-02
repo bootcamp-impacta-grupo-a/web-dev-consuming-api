@@ -10,19 +10,19 @@ function buildCalculateImc() {
   }
 }
 
-function doCalculateImc(height, weight) {
+async function doCalculateImc(height, weight) {
   const payload = {
     height,
     weight,
   }
 
-  const result = fetch("http://localhost:8080/calculate", {
+  const result = await fetch("http://localhost:8080/imc/calculate", {
     method: "POST",
     body: JSON.stringify(payload),
     headers: { "Content-type": "application/json; charset=UTF-8" },
   }).then(response => response.json())
 
-  document.querySelector("#imc").innerHTML = result
+  document.querySelector("#imc").innerHTML = `${result.imc} - ${result.imcDescription}`
 }
 
 window.onload = function (evt) {
