@@ -6,16 +6,11 @@ function buildCalculateImc() {
     var height = heightElem.value
     var weight = weightElem.value
 
-    doCalculateImc(height, weight)
+    doCalculateImc({ height, weight })
   }
 }
 
-async function doCalculateImc(height, weight) {
-  const payload = {
-    height,
-    weight,
-  }
-
+async function doCalculateImc(payload) {
   const result = await fetch("http://localhost:8080/imc/calculate", {
     method: "POST",
     body: JSON.stringify(payload),
